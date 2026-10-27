@@ -141,8 +141,10 @@ test('scoring: missing data is excluded, not invented', () => {
   const result = weighted([{ name: 'a', weight: 50, score: 80 }, { name: 'b', weight: 50, score: null }]);
   assert.equal(result.score, 80);
   assert.equal(result.completeness, 50);
+  assert.equal(weighted([{ name: 'a', weight: 10, score: 100 }, { name: 'b', weight: 90, score: null }]).score, null);
   assert.equal(weighted([{ name: 'a', weight: 1, score: null }]).score, null);
-  assert.equal(workerScore({ reviewed: 0, assigned: 0, onShift: false }).score, 0);
+  assert.equal(workerScore({ reviewed: 0, assigned: 0, onShift: false }).score, null);
+  assert.equal(workerScore({ reviewed: 2, passed: 2, assigned: 2, completed: 1, onShift: false }).score, 65);
 });
 
 test('reports: business-day windows follow the branch time zone', async () => {

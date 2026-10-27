@@ -18,7 +18,9 @@ export function weighted(factors) {
   const totalWeight = factors.reduce((s, f) => s + f.weight, 0);
   const available = factors.filter(f => f.score != null && Number.isFinite(f.score));
   const availableWeight = available.reduce((s, f) => s + f.weight, 0);
-  const score = availableWeight ? available.reduce((s, f) => s + f.score * f.weight, 0) / availableWeight : null;
+  // Below half of the weight there is too little evidence to call it a score.
+  const enough = totalWeight > 0 && availableWeight * 2 >= totalWeight;
+  const score = enough && availableWeight ? available.reduce((s, f) => s + f.score * f.weight, 0) / availableWeight : null;
   return {
     score: score == null ? null : Math.round(score * 10) / 10,
     classification: classify(score),
