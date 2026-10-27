@@ -20,6 +20,19 @@ Check the installed version in PowerShell:
 node --version
 ```
 
+## Quick local demo (Windows PowerShell)
+
+```powershell
+git clone https://github.com/rocke3tare-hub/shinepro-car-wash-ops-v2.git
+Set-Location shinepro-car-wash-ops-v2
+Copy-Item .env.example .env
+npm run db:seed -- --demo
+npm start
+```
+
+Open <http://localhost:8787/>. Every demo account (table below) uses the
+password set in `.env` (`SEED_DEMO_PASSWORD`). Change it before sharing the machine.
+
 ## First run (Windows PowerShell)
 
 ```powershell

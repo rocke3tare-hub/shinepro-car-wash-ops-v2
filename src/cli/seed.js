@@ -21,6 +21,10 @@ if (ownerPassword.length < MIN_PASSWORD_LENGTH) {
   process.exit(1);
 }
 const demoPassword = process.env.SEED_DEMO_PASSWORD || crypto.randomBytes(12).toString('base64url');
+if (config.env === 'production' && /^Demo-only/i.test(ownerPassword)) {
+  console.error('The example demo password cannot be used in production. Set a real SEED_OWNER_PASSWORD or leave it empty.');
+  process.exit(1);
+}
 
 const db = new Database(config.databaseFile);
 db.migrate();
