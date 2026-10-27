@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShinePro Car Care</title>
+  <meta name="description" content="ShinePro car wash and detailing. Book, track your visits and keep every receipt in one place.">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="module" src="/assets/landing.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">SHINE<span>PRO</span></div>
+    <nav class="btn-row">
+      <a class="btn ghost" href="#services">Services</a>
+      <a class="btn ghost" href="/register-business">For businesses</a>
+      <button id="lang-toggle" class="ghost" type="button" aria-label="Switch language">EN / فا</button>
+      <button data-auth="login" type="button">Sign in</button>
+      <button data-auth="signup" class="primary" type="button">Create account</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Car care studio · Tehran</p>
+        <h1>A cleaner car, without the guesswork.</h1>
+        <p>Transparent prices for every vehicle size, a quality check before you pay, and a digital receipt for every visit.</p>
+        <div class="btn-row">
+          <button data-auth="signup" class="primary" type="button">Create your member account</button>
+          <a class="btn" href="#services">See services</a>
+        </div>
+      </div>
+      <img src="/assets/hero-car.png" alt="A freshly detailed car in the ShinePro studio" width="800" height="600">
+    </section>
+    <section class="section" id="services">
+      <p class="eyebrow">Services</p>
+      <h2>Care for every kind of drive</h2>
+      <div class="services" id="service-grid"><p class="muted">Loading services…</p></div>
+    </section>
+    <section class="section" id="offers-section">
+      <p class="eyebrow">Members</p>
+      <h2>Current offers</h2>
+      <div class="offers" id="offer-grid"></div>
+    </section>
+  </main>
+  <footer class="footer">
+    <span>© ShinePro Car Care</span>
+    <span><a href="/app">Staff sign-in</a> · <a href="/register-business">Register your car wash</a></span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register your car wash · ShinePro</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="module" src="/assets/business.js"></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="/">SHINE<span>PRO</span></a><a class="btn" href="/">Back to site</a></header>
+  <main class="narrow">
+    <p class="eyebrow">For businesses</p>
+    <h1>Run your car wash on ShinePro</h1>
+    <p class="muted">Tell us about your business. The platform team reviews every request before any owner access is granted.</p>
+    <form id="business-form" class="card form-grid" novalidate>
+      <div class="full"><label for="b-name">Business name</label><input id="b-name" name="businessName" required maxlength="120"></div>
+      <div><label for="b-contact">Contact name</label><input id="b-contact" name="contactName" autocomplete="name" required></div>
+      <div><label for="b-phone">Phone</label><input id="b-phone" name="phone" autocomplete="tel" required></div>
+      <div><label for="b-email">Email</label><input id="b-email" name="email" type="email" autocomplete="email" required></div>
+      <div><label for="b-city">City</label><input id="b-city" name="city" required></div>
+      <div><label for="b-branches">Number of branches</label><input id="b-branches" name="branchCount" type="number" min="1" max="500" value="1"></div>
+      <div class="full"><label for="b-desc">Anything we should know?</label><textarea id="b-desc" name="description" maxlength="1000"></textarea></div>
+      <div class="full"><button class="primary" type="submit">Submit request</button></div>
+    </form>
+    <p id="business-done" class="notice ok hidden" role="status">Request received. We will contact you after review.</p>
+  </main>
+</body>
+</html>

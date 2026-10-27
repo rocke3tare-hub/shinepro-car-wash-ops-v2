@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+node_modules/
+data/
+*.sqlite
+*.sqlite-*
+*.log
+exports/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
